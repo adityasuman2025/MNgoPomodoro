@@ -100,7 +100,9 @@ function startTimer() {
     if (timeInSeconds <= 0) return;
 
     const durationTypeStr = durationType[0].toUpperCase() + durationType.substring(1).toLowerCase();
-    showNotification({ msg: durationTypeStr + " has started of " + durationValues[durationType] + " mins" });
+
+    const currTime = getMMSSFromSeconds(timeInSeconds).tensMin + getMMSSFromSeconds(timeInSeconds).min + ":" + getMMSSFromSeconds(timeInSeconds).tensSec + getMMSSFromSeconds(timeInSeconds).sec;
+    showNotification({ msg: durationTypeStr + " has started of " + currTime });
 
     ticker.postMessage('stop');
 
@@ -181,6 +183,10 @@ function showNotification({ msg }) {
         body: msg,
         // icon: "img.jpg"
     });
+    notification.onclick = () => {
+        notification.close();
+        window.parent.focus();
+    }
 }
 
 
