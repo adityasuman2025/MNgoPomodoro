@@ -208,7 +208,7 @@ function handleMouseMove() {
 
 
 // showing app downloads only on web
-const appDownloadsEle = document.getElementById("appDownloads");
-if (["https:", "http:"].includes(window.location.protocol) && appDownloadsEle) {
-    appDownloadsEle.style.display = "flex";
-} 
+// const appDownloadsEle = document.getElementById("appDownloads");
+// if (["https:", "http:"].includes(window.location.protocol) && appDownloadsEle) {
+//     appDownloadsEle.style.display = "flex";
+// } 
