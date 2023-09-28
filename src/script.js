@@ -181,7 +181,7 @@ function getMMSSFromSeconds(seconds) {
 function showNotification({ msg }) {
     const notification = new Notification("MNgo Pomodoro", {
         body: msg,
-        // icon: "img.jpg"
+        // icon: "assets/logo512.png"
     });
     notification.onclick = () => {
         notification.close();
