@@ -82,17 +82,31 @@ body {
     justify-content: center;
 }
 
-#playPauseBtn {
+.button {
     background-color: rgb(255, 255, 255, 0.1);
     padding: 15px 40px;
     width: fit-content;
     border-radius: 7px;
     cursor: pointer;
+    color: #f1f1f1;
+    text-decoration: none;
 }
 
 .disabled {
     pointer-events: none;
     opacity: 0.5;
+}
+
+#appDownloads {
+    display: none;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.downloadBtn {
+    padding: 10px 30px;
 }
 
 @media screen and (max-width: 700px) {

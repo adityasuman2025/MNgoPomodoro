@@ -1,4 +1,4 @@
-const ticker = new Worker('timerWorker.js');
+const ticker = new Worker('timerWorker.js'); // https://www.reddit.com/r/reactjs/comments/useyq8/setinterval_not_working_in_the_inactive_tab/?rdt=39245
 
 const DURATION_INPUT_TYPE_SESSION = "session", DURATION_INPUT_TYPE_BREAK = "break";
 const MAX_DURATION = { [DURATION_INPUT_TYPE_SESSION]: 60, [DURATION_INPUT_TYPE_BREAK]: 20 };
@@ -207,4 +207,8 @@ function handleMouseMove() {
 }
 
 
-// https://www.reddit.com/r/reactjs/comments/useyq8/setinterval_not_working_in_the_inactive_tab/?rdt=39245
+// showing app downloads only on web
+const appDownloadsEle = document.getElementById("appDownloads");
+if (["https:", "http:"].includes(window.location.protocol) && appDownloadsEle) {
+    appDownloadsEle.style.display = "flex";
+} 

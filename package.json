@@ -16,6 +16,17 @@
   "build": {
     "appId": "in.mngo.pomodoro",
     "productName": "MNgo Pomodoro",
+    "files": [
+      "src/assets/*",
+      "src/index.html",
+      "src/script.js",
+      "src/styles.css",
+      "src/timerWorker.js",
+
+      "node_modules/**/*",
+      "package.json",
+      "index.js"
+    ],
 
     "directories": {
       "output": "dist"
