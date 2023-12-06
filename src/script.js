@@ -181,7 +181,7 @@ function getMMSSFromSeconds(seconds) {
 function showNotification({ msg }) {
     const notification = new Notification("MNgo Pomodoro", {
         body: msg,
-        // icon: "assets/logo512.png"
+        icon: "assets/xxxs.png"
     });
     notification.onclick = () => {
         notification.close();
@@ -205,10 +205,3 @@ function handleMouseMove() {
 
     document.removeEventListener("click", handleMouseMove);
 }
-
-
-// showing app downloads only on web
-// const appDownloadsEle = document.getElementById("appDownloads");
-// if (["https:", "http:"].includes(window.location.protocol) && appDownloadsEle) {
-//     appDownloadsEle.style.display = "flex";
-// } 

@@ -1,75 +1,68 @@
 {
-  "name": "mngo-pomodoro",
-  "version": "1.0.0",
-  "description": "MNgo Pomodoro | Pomodoro App to increase your productivity and manage timer better | Developer: Aditya Suman",
-  "author": "Aditya Suman",
-  "homepage": "https://mngo.in",
-  "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:adityasuman2025/MNgoPomodoro.git"
-  },
-  "main": "index.js",
-  "keywords": [],
-  "license": "UNLICENSED",
-
-  "build": {
-    "appId": "in.mngo.pomodoro",
-    "productName": "MNgo Pomodoro",
-    "files": [
-      "src/assets/*",
-      "src/index.html",
-      "src/script.js",
-      "src/styles.css",
-      "src/timerWorker.js",
-
-      "node_modules/**/*",
-      "package.json",
-      "index.js"
-    ],
-
-    "directories": {
-      "output": "dist"
+    "name": "mngo-pomodoro",
+    "version": "1.0.0",
+    "description": "MNgo Pomodoro | Pomodoro App to increase your productivity and manage timer better | Developer: Aditya Suman",
+    "author": "Aditya Suman",
+    "homepage": "https://mngo.in",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:adityasuman2025/MNgoPomodoro.git"
     },
-    "publish": {
-      "provider": "generic",
-      "url": "http://127.0.0.1:8080/"
+    "main": "index.js",
+    "keywords": [],
+    "license": "UNLICENSED",
+    "build": {
+        "appId": "in.mngo.pomodoro",
+        "productName": "MNgo Pomodoro",
+        "files": [
+            "src/assets/*",
+            "src/index.html",
+            "src/script.js",
+            "src/styles.css",
+            "src/timerWorker.js",
+            "node_modules/**/*",
+            "package.json",
+            "index.js"
+        ],
+        "directories": {
+            "output": "dist"
+        },
+        "publish": {
+            "provider": "generic",
+            "url": "http://127.0.0.1:8080/"
+        },
+        "mac": {
+            "category": "public.app-category.productivity",
+            "target": "dmg",
+            "icon": "src/assets/logo512.png"
+        },
+        "dmg": {
+            "icon": "src/assets/logo512.png"
+        },
+        "win": {
+            "target": "nsis",
+            "icon": "src/assets/logo512.ico"
+        },
+        "nsis": {
+            "createDesktopShortcut": true,
+            "installerIcon": "src/assets/logo512.ico"
+        },
+        "linux": {
+            "target": "AppImage",
+            "icon": "src/assets/logo512.png"
+        }
     },
-
-    "mac": {
-      "category": "public.app-category.productivity",
-      "target": "dmg",
-      "icon": "src/assets/logo512.png"
+    "scripts": {
+        "serve": "serve -s src",
+        "start": "electron index.js",
+        "build-mac": "rm -rf dist && electron-builder --mac",
+        "build-win": "rm -rf dist && electron-builder --win",
+        "build-linux": "rm -rf dist && electron-builder --linux"
     },
-    "dmg": {
-      "icon": "src/assets/logo512.png"
+    "devDependencies": {
+        "electron": "^26.2.3",
+        "electron-builder": "^24.6.4"
     },
-
-    "win": {
-      "target": "nsis",
-      "icon": "src/assets/logo512.ico"
-    },
-    "nsis": {
-      "createDesktopShortcut": true,
-      "installerIcon": "src/assets/logo512.ico"
-    },
-
-    "linux": {
-      "target": "AppImage",
-      "icon": "src/assets/logo512.png"
-    }
-  },
-  
-  "scripts": {
-    "serve": "serve src",
-    "start": "electron index.js",
-    "build-mac": "rm -rf dist && electron-builder --mac",
-    "build-win": "rm -rf dist && electron-builder --win",
-    "build-linux": "rm -rf dist && electron-builder --linux"
-  },
-  "devDependencies": {
-    "electron": "^26.2.3",
-    "electron-builder": "^24.6.4"
-  },
-  "dependencies": {}
+    "dependencies": {}
 }
